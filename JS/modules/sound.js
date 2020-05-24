@@ -1,5 +1,5 @@
 export const Sound = {
-    win: new Audio("./../../Media/win.mp3"),
-    lose: new Audio("./../../Media/lose.mp3"),
+    win: new Audio("./../../Media/win.m4a"),
+    lose: new Audio("./../../Media/lose.m4a"),
     click: new Audio("./../../Media/click.mp3")
 }
