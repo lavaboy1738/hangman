@@ -4,7 +4,7 @@ import {Sound} from "./sound.js";
 
 const Home = (()=>{
     //cacheing the dom
-    const hangmanEl = document.querySelector(".container");
+    const hangmanEl = document.querySelector(".hangman");
     const init = () => {
         render();
         listeners();

@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: var(--main-font);
 }
 
 :root{
@@ -15,16 +16,21 @@ body{
 }
 
 .container{
+    border: 2px solid black;
     height: 500px;
     width: 500px;
-    border: 2px solid black;
-    background-color: rgba(254, 254, 254, 0.2);
     margin: 15vh auto auto auto;
 }
 
+.hangman{
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 .hangman-title{
-    margin-top: 150px;
-    font-family: var(--main-font);
+    margin-top: 130px;
     font-weight: 300;
     text-align: center;
 }
@@ -36,7 +42,6 @@ body{
 }
 
 .btn{
-    font-family: var(--main-font);
     width: 100px;
     height: 40px;
     background-color: transparent;
@@ -67,4 +72,79 @@ body{
 
 .btn:hover::before{
     transform: translateX(0%);
+}
+
+.hangman-lives{
+}
+
+.hangman-board{
+    display: block;
+    height: 180px;
+    border: 2px solid black;
+    margin: 20px auto 10px auto;
+}
+
+.hangman-word{
+    font-weight: 300;
+    font-size: 40px;
+    text-align: center;
+}
+
+.hangman-instructions{
+    margin: 5px auto 10px auto;
+    font-weight: 300;
+    text-align: center;
+}
+
+.hangman-letters{
+    text-align: center;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.hangman-letter{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 300;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 2px 5px 2px 5px;
+    opacity: 1;
+    transition: 0.3s all ease;
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hangman-letter::before{
+    content: "";
+    height: 100%;
+    width: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    transform: translateX(-110%);
+    transition: 0.3s all ease;
+    z-index: -1;
+}
+
+.hangman-letter:hover{
+    color: white;
+}
+
+.hangman-letter:hover::before{
+    transform: translateX(-5%);
+}
+
+.hangman-letter-selected{
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.main-menu{
+    display: block;
+    margin: 15px auto auto auto;
 }
