@@ -23,12 +23,12 @@ const Home = (()=>{
 
     const listeners = () => {
         const startBtn = document.querySelector(".btn-start").addEventListener("click", ()=>{
-            Game.init();
             Sound.click.play();
+            Game.init();
         });
         const instructionsBtn = document.querySelector(".btn-instructions").addEventListener("click", ()=>{
-            Instructions.init();
             Sound.click.play();
+            Instructions.init();
         });
     }
 

@@ -1,6 +1,7 @@
 import Home from "./home.js";
 import {Sound} from "./sound.js";
 import End from "./end.js"
+import Board from "./board.js";
 
 const Game = (()=>{
     const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R","S", "T", "U", "V", "W", "X", "Y" ,"Z"];
@@ -22,13 +23,14 @@ const Game = (()=>{
         //render the initial page;
         renderInitialPage();
         listeners();
+        Board.init();
     }
 
     const listeners = () => {
         hangmanEl.addEventListener("click", (event)=>{
             if(event.target.matches(".main-menu")){
-                Home.init();
                 Sound.click.play();
+                Home.init()
             }
 
             if(event.target.matches(".hangman-letter")){
@@ -85,6 +87,7 @@ const Game = (()=>{
             updateGuessingWord(guess);
         }else{
             lives --;
+            Board.setState(lives)
         }
         //update the guessing word
         //update lives
