@@ -165,3 +165,13 @@ body{
 .cut-screen{
     opacity: 0;
 }
+
+a{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 12px;
+}
