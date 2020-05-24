@@ -148,3 +148,9 @@ body{
     display: block;
     margin: 15px auto auto auto;
 }
+
+.hangman-result{
+    font-size: 20px;
+    text-align: center;
+    margin: 40px;
+}

@@ -1,5 +1,6 @@
 import Home from "./home.js";
 import {Sound} from "./sound.js";
+import End from "./end.js"
 
 const Game = (()=>{
     const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R","S", "T", "U", "V", "W", "X", "Y" ,"Z"];
@@ -55,16 +56,22 @@ const Game = (()=>{
         return guesses.includes(letter)
     }
 
-    const won = () => {return guessingWord.join("").toLowerCase() === chosenWord};
-    const lost = () => {return lives <= 0}
+    const win = () => {return guessingWord.join("").toLowerCase() === chosenWord};
+    const lose = () => {return lives <= 0}
 
     const gameOver = () =>{
         if(win()){
             Sound.win.play();
-            alert("you win!");
-        }else if(lost()){
+            End.setState({
+                chosenWord,
+                winOrLose: "Win"
+            })
+        }else if(lose()){
             Sound.lose.play();
-            alert(`You Lost! the word is: ${chosenWord}`);
+            End.setState({
+                chosenWord,
+                winOrLose: "Lose"
+            })
         }
     }
 
